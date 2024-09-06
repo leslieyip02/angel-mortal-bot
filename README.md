@@ -26,12 +26,18 @@ ANGEL_ALIAS='Care Bear'
 MORTAL_ALIAS='Gummy Bear'
 ```
 
-3. Run the bot
+3. Configure `systemd` service
 
 ```
 # set up environment
 python -m venv .venv
 pip install -r requirements.txt
 
-python bot.py
+# add service
+sudo systemctl --force --full edit bots.service
+
+sudo systemctl daemon-reload
+sudo systemctl enable bot.service
 ```
+
+Follow instructions from [here](https://blog.merzlabs.com/posts/python-autostart-systemd/).
