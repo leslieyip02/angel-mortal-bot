@@ -3,3 +3,6 @@ __pycache__
 *.pem
 *.log
 *.json
+
+.venv
+.env

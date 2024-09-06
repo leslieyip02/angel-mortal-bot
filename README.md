@@ -1,34 +1,37 @@
 # Angel and Mortals Bot
 
-Send anonymous messages between angels and mortals. 
+Forked from [https://github.com/kstonekuan/angel-mortal-bot](https://github.com/kstonekuan/angel-mortal-bot).
 
-**[NEW]** Now supports photos, stickers, documents, audio, video, and animations!
+## Setup
 
-## Read on Medium
+1. Configure `players.csv`
 
-https://chatbotslife.com/building-a-chatbot-for-angel-mortal-5d389ab7acde
+The pairings follow the format below:
 
-## User data
-
-Data used for the game was small so just use file PLAYERS_FILENAME to store usernames of players.
-Order of columns is player, angel and mortal with one header row.
-
-Sample:
 ```
 Player,Angel,Mortal
-username1,username2,username3
-username2,username3,username1
-username3,username1,username2
 ```
 
-## Environment variables
+For the names, do not include the `@`.
 
-ANGEL_BOT_TOKEN = os.environ['ANGEL_BOT_TOKEN']
-PLAYERS_FILENAME = os.environ['PLAYERS_FILENAME']
-CHAT_ID_JSON = os.environ['CHAT_ID_JSON']
-ANGEL_ALIAS = os.environ['ANGEL_ALIAS']
-MORTAL_ALIAS = os.environ['MORTAL_ALIAS']
+2. Configure `.env`
 
-## Useful references
-https://python-telegram-bot.readthedocs.io/en/stable/telegram.bot.html#telegram.Bot.sendAnimation
-https://python-telegram-bot.readthedocs.io/en/stable/telegram.message.html#telegram.Message
+Get an API token from [https://t.me/BotFather](https://t.me/BotFather).
+
+```
+ANGEL_BOT_TOKEN=<API token here>
+PLAYERS_FILENAME='players.csv'
+CHAT_ID_JSON='logs.json'
+ANGEL_ALIAS='Care Bear'
+MORTAL_ALIAS='Gummy Bear'
+```
+
+3. Run the bot
+
+```
+# set up environment
+python -m venv .venv
+pip install -r requirements.txt
+
+python bot.py
+```
