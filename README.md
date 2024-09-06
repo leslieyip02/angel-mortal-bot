@@ -33,11 +33,13 @@ MORTAL_ALIAS='Gummy Bear'
 python -m venv .venv
 pip install -r requirements.txt
 
-# add service
-sudo systemctl --force --full edit bots.service
-
-sudo systemctl daemon-reload
+# configure service
+sudo cp bot.service /etc/systemd/system/bot.service
 sudo systemctl enable bot.service
+sudo systemctl start bot.service
+
+# check logs
+sudo systemctl status bot.service
 ```
 
-Follow instructions from [here](https://blog.merzlabs.com/posts/python-autostart-systemd/).
+Follow instructions from [here](https://blog.merzlabs.com/posts/python-autostart-systemd/). Edit the path to the `.venv` and `bot.py` files as necessary.

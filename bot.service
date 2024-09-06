@@ -3,7 +3,8 @@ Description=CBGB
 After=network.target
 
 [Service]
-ExecStart=/home/angel-mortal-bot/.venv/bin/python ./angel-mortal-bot/bot.py
+WorkingDirectory=/home/leslie/angel-mortal-bot
+ExecStart=/home/angel-mortal-bot/.venv/bin/python bot.py
 
 [Install]
 WantedBy=multi-user.target
