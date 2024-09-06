@@ -1,3 +1,7 @@
+from dotenv import load_dotenv
+
+load_dotenv()
+
 import logging
 import player
 import messages
@@ -6,13 +10,10 @@ import collections
 
 import config
 
-from dotenv import load_dotenv
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardRemove
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext, ConversationHandler, CallbackQueryHandler
 
 CHOOSING, ANGEL, MORTAL = range(3)
-
-load_dotenv()
 
 # Enable logging
 logging.basicConfig(
